@@ -10,12 +10,15 @@ import javax.swing.JFrame;
 public class DDWindow extends JFrame {
 	private static final long serialVersionUID = -4056239297507207668L; // Generated serial ID to make Eclipse happy
 
+	private String _window_name;
+	
 	private DDPanel _top_panel; // Top panel object, action buttons
 	private DDPanel _side_panel; // Side panel object, trees of objects
 	private DDPanel _middle_panel; // Middle panel object, main view
 
 	// Constructor
-	public DDWindow() {
+	public DDWindow(String name) {
+		_window_name = name;
 		// Create all three panels
 		_top_panel = new DDPanel();
 		_side_panel = new DDPanel();
@@ -47,6 +50,8 @@ public class DDWindow extends JFrame {
 				resize();
 			}
 		});
+		
+		this.setTitle(_window_name);
 
 		// Give the window an old-style 800x600 resolution and resize the components
 		this.setSize(800, 600);
