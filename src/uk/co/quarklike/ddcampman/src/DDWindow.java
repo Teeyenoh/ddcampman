@@ -37,7 +37,8 @@ public class DDWindow extends JFrame {
 		_middle_panel.add(new DDTextBox(40));
 		_middle_panel.add(new DDDropDownBox(new String[] { "", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk",
 				"Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" }));
-
+		_middle_panel.add(new DDNumberBox(10));
+		
 		// Add an inline component listener to resize the three panels when the window
 		// is resized
 		this.addComponentListener(new ComponentAdapter() {
