@@ -34,6 +34,8 @@ public class DDWindow extends JFrame {
 		this.add(_middle_panel, BorderLayout.CENTER);
 		_middle_panel.setBackground(Color.BLUE);
 		
+		_middle_panel.add(new DDTextBox(40));
+		
 		// Add an inline component listener to resize the three panels when the window is resized
 		this.addComponentListener(new ComponentAdapter() {
 			@Override
