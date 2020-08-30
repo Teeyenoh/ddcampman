@@ -33,10 +33,13 @@ public class DDWindow extends JFrame {
 		_side_panel.setBackground(Color.GREEN);
 		this.add(_middle_panel, BorderLayout.CENTER);
 		_middle_panel.setBackground(Color.BLUE);
-		
+
 		_middle_panel.add(new DDTextBox(40));
-		
-		// Add an inline component listener to resize the three panels when the window is resized
+		_middle_panel.add(new DDDropDownBox(new String[] { "", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk",
+				"Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard" }));
+
+		// Add an inline component listener to resize the three panels when the window
+		// is resized
 		this.addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent component_event) {
@@ -50,13 +53,13 @@ public class DDWindow extends JFrame {
 
 		// Compress the window down so the components fill it (probably not needed)
 		this.pack();
-		
+
 		// Put the window in the centre of the screen
 		this.setLocationRelativeTo(null);
-		
+
 		// Make the program exit once the window is closed
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		// Show the window
 		this.setVisible(true);
 	}
